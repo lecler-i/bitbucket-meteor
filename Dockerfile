@@ -3,8 +3,6 @@ FROM node:latest
 # Add a user and a group called meteor
 RUN groupadd meteor && adduser --ingroup meteor --disabled-password --gecos "" --home /home/meteor meteor
 
-RUN npm install -g yarn
-
 # Installing meteor
 USER meteor
 RUN curl https://install.meteor.com/ | sh
