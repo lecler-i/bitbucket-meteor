@@ -1,14 +1,4 @@
-FROM ubuntu:16.10
-
-RUN apt-get update
-
-# Install curl, bzip2 and libfontconfig (an undocumented dependency of phantomjs)
-RUN apt-get install -y curl bzip2 libfontconfig
-
-# Install build-tools
-RUN apt-get install -y bcrypt make python g++
-
-RUN apt-get clean
+FROM node:latest
 
 # Add a user and a group called meteor
 RUN groupadd meteor && adduser --ingroup meteor --disabled-password --gecos "" --home /home/meteor meteor
